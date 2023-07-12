@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jul 12 19:51:18 GMT 2023","Wed Jul 12 19:51:19 GMT 2023","1173","","","","","","Listar todos os livros",""
+"passed","Wed Jul 12 19:51:19 GMT 2023","Wed Jul 12 19:51:19 GMT 2023","33","","","","","","Listar todos os personagens",""
+"passed","Wed Jul 12 19:51:19 GMT 2023","Wed Jul 12 19:51:19 GMT 2023","29","","","","","","Consultar uma casa específica",""
+"passed","Wed Jul 12 19:51:19 GMT 2023","Wed Jul 12 19:51:19 GMT 2023","45","","","","","","Consultar um livro específico",""
+"passed","Wed Jul 12 19:51:19 GMT 2023","Wed Jul 12 19:51:19 GMT 2023","34","","","","","","Listar todas as casas",""
+"passed","Wed Jul 12 19:51:19 GMT 2023","Wed Jul 12 19:51:19 GMT 2023","29","","","","","","Consultar um personagem específico",""
