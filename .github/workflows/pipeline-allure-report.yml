@@ -6,11 +6,17 @@ jobs:
     steps:
       - name: Check out Git repositor
         uses: actions/checkout@v2
+        
       - name: Install newman
         run: npm install -g newman
-      - name: Run the API and Postman's tests
+        
+      - name: Install newman-reporter-allure
+        run: npm install -g newman-reporter-allure
+        
+      - name: Run the Postman's tests
         run: | 
-          newman run "postman_collection.json"
+          newman run "postman_collection.json" -r allure
+          
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
