@@ -6,8 +6,6 @@ jobs:
     steps:
       - name: Check out Git repositor
         uses: actions/checkout@v1
-      - name: Install dependencies
-        run: npm install
       - name: Install newman
         run: npm install -g newman
       - name: Run the API and Postman's tests
@@ -37,3 +35,4 @@ jobs:
         env:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
