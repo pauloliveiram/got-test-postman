@@ -164,6 +164,39 @@
 		},
 		{
 			"name": "Consultar um personagem específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.url).to.include('https://www.anapioficeandfire.com/api/characters');",
+							"    pm.expect(responseJson.name).to.be.a('string');",
+							"    pm.expect(responseJson.culture).to.be.a('string');",
+							"    pm.expect(responseJson.born).to.be.a('string');",
+							"    pm.expect(responseJson.died).to.be.a('string');",
+							"    pm.expect(responseJson.titles).to.be.an('array');",
+							"    pm.expect(responseJson.aliases).to.be.an('array');",
+							"    pm.expect(responseJson.father).to.be.a('string');",
+							"    pm.expect(responseJson.mother).to.be.a('string');",
+							"    pm.expect(responseJson.spouse).to.be.a('string');",
+							"    pm.expect(responseJson.allegiances).to.be.an('array');",
+							"    pm.expect(responseJson.books).to.be.an('array');",
+							"    pm.expect(responseJson.povBooks).to.be.an('array');",
+							"    pm.expect(responseJson.tvSeries).to.be.an('array');",
+							"    pm.expect(responseJson.playedBy).to.be.an('array');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -186,6 +219,40 @@
 		},
 		{
 			"name": "Listar todas as casas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson[0].url).to.include('https://www.anapioficeandfire.com/api/houses');",
+							"    pm.expect(responseJson[0].name).to.be.a('string');",
+							"    pm.expect(responseJson[0].region).to.be.a('string');",
+							"    pm.expect(responseJson[0].coatOfArms).to.be.a('string');",
+							"    pm.expect(responseJson[0].words).to.be.a('string');",
+							"    pm.expect(responseJson[0].titles).to.be.an('array');",
+							"    pm.expect(responseJson[0].seats).to.be.an('array');",
+							"    pm.expect(responseJson[0].currentLord).to.be.a('string');",
+							"    pm.expect(responseJson[0].heir).to.be.a('string');",
+							"    pm.expect(responseJson[0].overLord).to.include('https://www.anapioficeandfire.com/api/houses');",
+							"    pm.expect(responseJson[0].founded).to.be.a('string');",
+							"    pm.expect(responseJson[0].founder).to.be.a('string');",
+							"    pm.expect(responseJson[0].diedOut).to.be.a('string');",
+							"    pm.expect(responseJson[0].ancestralWeapons).to.be.an('array');",
+							"    pm.expect(responseJson[0].cadetBranches).to.be.an('array');",
+							"    pm.expect(responseJson[0].swornMembers).to.be.an('array');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
