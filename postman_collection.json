@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "15bc4daa-d895-4daf-8cd8-f3eb7a6869c7",
+		"name": "GAME OF THRONES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27429245",
+		"_collection_link": "https://www.postman.com/payload-architect-23109651/workspace/poc-s/collection/27429245-15bc4daa-d895-4daf-8cd8-f3eb7a6869c7?action=share&creator=27429245&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Listar todos os livros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson[0].url).to.include('https://www.anapioficeandfire.com/api/books');",
+							"    pm.expect(responseJson[0].name).to.be.a('string');",
+							"    pm.expect(responseJson[0].isbn).to.be.a('string');",
+							"    pm.expect(responseJson[0].authors).to.be.an('array');",
+							"    pm.expect(responseJson[0].numberOfPages).to.be.a('number');",
+							"    pm.expect(responseJson[0].publisher).to.be.a('string');",
+							"    pm.expect(responseJson[0].country).to.be.a('string');",
+							"    pm.expect(responseJson[0].mediaType).to.be.a('string');",
+							"    pm.expect(responseJson[0].released).to.be.a('string');",
+							"    pm.expect(responseJson[0].characters).to.be.an('array')",
+							"    pm.expect(responseJson[0].povCharacters).to.be.an('array');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.anapioficeandfire.com/api/books",
+					"protocol": "https",
+					"host": [
+						"www",
+						"anapioficeandfire",
+						"com"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar um livro específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.anapioficeandfire.com/api/books/1",
+					"protocol": "https",
+					"host": [
+						"www",
+						"anapioficeandfire",
+						"com"
+					],
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os personagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.anapioficeandfire.com/api/characters",
+					"protocol": "https",
+					"host": [
+						"www",
+						"anapioficeandfire",
+						"com"
+					],
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar um personagem específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.anapioficeandfire.com/api/characters/823",
+					"protocol": "https",
+					"host": [
+						"www",
+						"anapioficeandfire",
+						"com"
+					],
+					"path": [
+						"api",
+						"characters",
+						"823"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todas as casas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.anapioficeandfire.com/api/houses",
+					"protocol": "https",
+					"host": [
+						"www",
+						"anapioficeandfire",
+						"com"
+					],
+					"path": [
+						"api",
+						"houses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar uma casa específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.anapioficeandfire.com/api/houses/10",
+					"protocol": "https",
+					"host": [
+						"www",
+						"anapioficeandfire",
+						"com"
+					],
+					"path": [
+						"api",
+						"houses",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
