@@ -3,8 +3,7 @@
 		"_postman_id": "15bc4daa-d895-4daf-8cd8-f3eb7a6869c7",
 		"name": "GAME OF THRONES",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27429245",
-		"_collection_link": "https://www.postman.com/payload-architect-23109651/workspace/poc-s/collection/27429245-15bc4daa-d895-4daf-8cd8-f3eb7a6869c7?action=share&creator=27429245&source=collection_link"
+		"_exporter_id": "27429245"
 	},
 	"item": [
 		{
@@ -240,7 +239,7 @@
 							"    pm.expect(responseJson[0].seats).to.be.an('array');",
 							"    pm.expect(responseJson[0].currentLord).to.be.a('string');",
 							"    pm.expect(responseJson[0].heir).to.be.a('string');",
-							"    pm.expect(responseJson[0].overLord).to.include('https://www.anapioficeandfire.com/api/houses');",
+							"    pm.expect(responseJson[0].overlord).to.include('https://www.anapioficeandfire.com/api/houses');",
 							"    pm.expect(responseJson[0].founded).to.be.a('string');",
 							"    pm.expect(responseJson[0].founder).to.be.a('string');",
 							"    pm.expect(responseJson[0].diedOut).to.be.a('string');",
@@ -274,6 +273,40 @@
 		},
 		{
 			"name": "Consultar uma casa específica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The response has all expected properties\", () => {",
+							"    const responseJson = pm.response.json();",
+							"",
+							"    pm.expect(responseJson.url).to.include('https://www.anapioficeandfire.com/api/houses');",
+							"    pm.expect(responseJson.name).to.be.a('string');",
+							"    pm.expect(responseJson.region).to.be.a('string');",
+							"    pm.expect(responseJson.coatOfArms).to.be.a('string');",
+							"    pm.expect(responseJson.words).to.be.a('string');",
+							"    pm.expect(responseJson.titles).to.be.an('array');",
+							"    pm.expect(responseJson.seats).to.be.an('array');",
+							"    pm.expect(responseJson.currentLord).to.be.a('string');",
+							"    pm.expect(responseJson.heir).to.be.a('string');",
+							"    pm.expect(responseJson.overlord).to.include('https://www.anapioficeandfire.com/api/houses');",
+							"    pm.expect(responseJson.founded).to.be.a('string');",
+							"    pm.expect(responseJson.founder).to.be.a('string');",
+							"    pm.expect(responseJson.diedOut).to.be.a('string');",
+							"    pm.expect(responseJson.ancestralWeapons).to.be.an('array');",
+							"    pm.expect(responseJson.cadetBranches).to.be.an('array');",
+							"    pm.expect(responseJson.swornMembers).to.be.an('array');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
