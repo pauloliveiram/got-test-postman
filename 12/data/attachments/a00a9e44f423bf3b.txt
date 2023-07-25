@@ -1,0 +1,24 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("The response has all expected properties", () => {
+    const responseJson = pm.response.json();
+
+    pm.expect(responseJson.url).to.include('https://www.anapioficeandfire.com/api/houses');
+    pm.expect(responseJson.name).to.be.a('string');
+    pm.expect(responseJson.region).to.be.a('string');
+    pm.expect(responseJson.coatOfArms).to.be.a('string');
+    pm.expect(responseJson.words).to.be.a('string');
+    pm.expect(responseJson.titles).to.be.an('array');
+    pm.expect(responseJson.seats).to.be.an('array');
+    pm.expect(responseJson.currentLord).to.be.a('string');
+    pm.expect(responseJson.heir).to.be.a('string');
+    pm.expect(responseJson.overlord).to.include('https://www.anapioficeandfire.com/api/houses');
+    pm.expect(responseJson.founded).to.be.a('string');
+    pm.expect(responseJson.founder).to.be.a('string');
+    pm.expect(responseJson.diedOut).to.be.a('string');
+    pm.expect(responseJson.ancestralWeapons).to.be.an('array');
+    pm.expect(responseJson.cadetBranches).to.be.an('array');
+    pm.expect(responseJson.swornMembers).to.be.an('array');
+})

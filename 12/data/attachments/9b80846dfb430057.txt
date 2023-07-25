@@ -1,0 +1,23 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("The response has all expected properties", () => {
+    const responseJson = pm.response.json();
+
+    pm.expect(responseJson.url).to.include('https://www.anapioficeandfire.com/api/characters');
+    pm.expect(responseJson.name).to.be.a('string');
+    pm.expect(responseJson.culture).to.be.a('string');
+    pm.expect(responseJson.born).to.be.a('string');
+    pm.expect(responseJson.died).to.be.a('string');
+    pm.expect(responseJson.titles).to.be.an('array');
+    pm.expect(responseJson.aliases).to.be.an('array');
+    pm.expect(responseJson.father).to.be.a('string');
+    pm.expect(responseJson.mother).to.be.a('string');
+    pm.expect(responseJson.spouse).to.be.a('string');
+    pm.expect(responseJson.allegiances).to.be.an('array');
+    pm.expect(responseJson.books).to.be.an('array');
+    pm.expect(responseJson.povBooks).to.be.an('array');
+    pm.expect(responseJson.tvSeries).to.be.an('array');
+    pm.expect(responseJson.playedBy).to.be.an('array');
+})

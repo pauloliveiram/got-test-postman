@@ -1,0 +1,19 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("The response has all expected properties", () => {
+    const responseJson = pm.response.json();
+
+    pm.expect(responseJson[0].url).to.include('https://www.anapioficeandfire.com/api/books');
+    pm.expect(responseJson[0].name).to.be.a('string');
+    pm.expect(responseJson[0].isbn).to.be.a('string');
+    pm.expect(responseJson[0].authors).to.be.an('array');
+    pm.expect(responseJson[0].numberOfPages).to.be.a('number');
+    pm.expect(responseJson[0].publisher).to.be.a('string');
+    pm.expect(responseJson[0].country).to.be.a('string');
+    pm.expect(responseJson[0].mediaType).to.be.a('string');
+    pm.expect(responseJson[0].released).to.be.a('string');
+    pm.expect(responseJson[0].characters).to.be.an('array');
+    pm.expect(responseJson[0].povCharacters).to.be.an('array');
+})
