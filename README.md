@@ -4,15 +4,14 @@
 
 Essa é uma aplicação de testes automatizados em uma API com informações sobre a série Game of Thrones. Os testes foram aplicados em todos os endpoints da API, cujos resultados são disponibilizados em relatório gerado pelo Allure.
 
+## Link da API
+https://anapioficeandfire.com/
+
 ## Tecnologias utilizadas
 
 - Postman
 - Allure Report
 - Github Actions
-
-### Link da API
-
-https://anapioficeandfire.com/
 
 ## Endpoints testados
 
